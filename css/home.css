@@ -354,3 +354,8 @@ nav .nav-links {
     display: none;
   }
 }
+
+.menu {
+  height: auto;
+  background: url();
+}
