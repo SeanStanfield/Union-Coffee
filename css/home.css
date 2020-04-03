@@ -855,6 +855,37 @@ nav .nav-links {
   justify-content: flex-start;
 }
 
+.input-container {
+  position: relative;
+  width: min-content;
+}
+
+.newsletter-input {
+  height: 42px;
+  width: 220px;
+  margin-top: 10px;
+  padding-left: 8px;
+  font-family: "Oxygen", sans-serif;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+}
+
+.sign-up {
+  height: 42px;
+  width: 65px;
+  font-size: 14px;
+  letter-spacing: 0.15mm;
+  position: absolute;
+  margin-top: 10px;
+  right: 0;
+  border: none;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  background-color: rgb(66, 53, 37);
+  color: whitesmoke;
+}
+
 @media all and (max-width: 767px) {
   .info-bar {
     flex-direction: column;
