@@ -851,7 +851,7 @@ nav .nav-links {
   flex: 1;
   /* background-color: moccasin; */
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-start;
 }
 
 @media all and (max-width: 767px) {
