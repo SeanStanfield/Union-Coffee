@@ -854,7 +854,7 @@ nav .nav-links {
   justify-content: flex-start;
 }
 
-@media all and (max-width: 767px) {
+@media all and (max-width: 500px) {
   .info-bar {
     flex-direction: column;
   }
