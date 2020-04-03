@@ -825,9 +825,10 @@ nav .nav-links {
   flex: 2;
   /* background-color: mistyrose; */
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-start;
 }
 .footer-list {
+  flex: 1;
   list-style: none;
   font-weight: lighter;
   font-family: "Oxygen", sans-serif;
@@ -854,7 +855,7 @@ nav .nav-links {
   justify-content: flex-start;
 }
 
-@media all and (max-width: 500px) {
+@media all and (max-width: 767px) {
   .info-bar {
     flex-direction: column;
   }
@@ -866,18 +867,20 @@ nav .nav-links {
   .footer {
     height: auto;
     min-height: max-content;
-    flex-direction: column;
+    flex-direction: row;
   }
 
   .footer-left,
   .footer-right {
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start;
   }
 
   .footer-list {
     margin-bottom: 20px;
+    margin-top: 20px;
+    width: 45%;
   }
 }
