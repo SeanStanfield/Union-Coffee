@@ -114,6 +114,7 @@ nav {
 nav .logo-container {
   width: 50%;
   margin: auto 0 auto 2rem;
+  animation: glideInRight 1s ease;
 }
 
 @media all and (max-width: 350px) {
@@ -128,6 +129,42 @@ nav .nav-links {
   display: flex;
   align-items: center;
   justify-content: flex-end;
+
+  animation: glideInLeft 1s ease;
+}
+
+@keyframes glideInLeft {
+  0% {
+    transform: translateX(80px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+@keyframes glideInRight {
+  0% {
+    transform: translateX(-80px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+@keyframes glideInDown {
+  0% {
+    transform: translateY(-80px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
 }
 
 @media all and (max-width: 800px) {
@@ -181,23 +218,43 @@ nav .nav-links {
   margin-top: 20vh;
 }
 
+.title-container {
+  height: 25vmin;
+  min-height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem;
+}
+
 .title-box {
-  width: 80vw;
-  max-width: 684px;
-  height: 225px;
+  width: 0vw;
+  /* max-width: 700px; */
+  height: 0px;
   border: 7px whitesmoke solid;
+  overflow: hidden;
   margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* animation */
+  animation: stretch 1.2s ease-in-out;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 0.75s;
 }
 
 .title-box h1 {
-  width: 100%;
-  height: 100%;
+  min-width: max-content;
   font-family: Oswald, sans-serif;
   font-weight: 500;
   text-align: center;
-  line-height: 225px;
-  font-size: 64px;
+  font-size: 6vmax;
+  text-transform: capitalize;
   color: whitesmoke;
+  padding-left: 4rem;
+  padding-right: 4rem;
 }
 
 .intro-text {
@@ -209,11 +266,82 @@ nav .nav-links {
   font-weight: 500;
   font-size: 32px;
   margin-bottom: 30px;
+  opacity: 0;
+  animation: glideInDown 2s ease;
+  animation-delay: 1.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes reveal {
+  0% {
+    width: 0px;
+    height: 0px;
+  }
+
+  15% {
+    width: 0px;
+    height: 0px;
+  }
+
+  40% {
+    width: 0px;
+    height: 28vh;
+  }
+
+  45% {
+    width: 0px;
+    height: 28vh;
+  }
+
+  100% {
+    width: 52vw;
+    height: 25vh;
+  }
+}
+
+@keyframes stretch {
+  0% {
+    width: 0px;
+    height: 8px;
+  }
+
+  30% {
+    width: 100%;
+    height: 8px;
+    border: thick white solid;
+  }
+
+  40% {
+    width: 100%;
+    height: 8px;
+    border: 5px white solid;
+  }
+
+  80% {
+    width: 100%;
+    height: 95%;
+    background-color: transparent;
+    border: thick white solid;
+  }
+
+  100% {
+    width: 100%;
+    height: 85%;
+    background-color: transparent;
+    border: thick white solid;
+  }
 }
 
 .scroller {
   margin-bottom: 15px;
-  animation: bob 4s infinite;
+  animation: bob 2.5s infinite;
+}
+
+.scroll-icon {
+  opacity: 0;
+  animation: glideInDown 2s ease;
+  animation-delay: 2s;
+  animation-fill-mode: forwards;
 }
 
 @keyframes bob {
@@ -222,7 +350,7 @@ nav .nav-links {
   }
 
   50% {
-    transform: translateY(10px);
+    transform: translateY(20px);
   }
 
   100% {
@@ -260,13 +388,29 @@ nav .nav-links {
 .bar-left {
   height: 5px;
   background-color: rgb(22, 22, 22);
-  flex: 1;
+  flex: 0;
+  animation: grow 5s ease;
+  animation-delay: 5s;
+  animation-fill-mode: forwards;
 }
 
 .bar-right {
   height: 5px;
   background-color: rgb(22, 22, 22);
-  flex: 1;
+  flex: 0;
+  animation: grow 5s ease;
+  animation-delay: 5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes grow {
+  0% {
+    flex: 0;
+  }
+
+  100% {
+    flex: 1;
+  }
 }
 
 .page-header {
@@ -324,7 +468,7 @@ nav .nav-links {
   /* border: solid; */
   height: auto;
   width: auto;
-  overflow: hidden;
+  overflow: visible;
   z-index: 2;
   position: relative;
 }
@@ -334,10 +478,31 @@ nav .nav-links {
   margin: 0;
   height: 100%;
   width: 100%;
-  object-fit: cover;
+  object-fit: contain;
   position: absolute;
   top: 0;
   left: 0;
+}
+
+.slide-left {
+  opacity: 0;
+  transform: translateX(-10vw);
+  transition: all 1.5s ease;
+}
+.slide-right {
+  opacity: 0;
+  transform: translateX(10vw);
+  transition: all 1.5s ease;
+}
+
+[class*="slide"].active {
+  opacity: 1;
+  transform: translateX(0px) scale(1);
+}
+
+[class*="slide"].active > * {
+  opacity: 1;
+  transform: translateX(0px);
 }
 
 .grid-item .grid-subtitle {
@@ -365,12 +530,19 @@ nav .nav-links {
   display: none;
 }
 
+.grid-link {
+  display: block;
+  width: 100%;
+  padding-top: 0.6vmin;
+  opacity: 0.6;
+}
+
 @media all and (max-width: 800px) {
   .main {
     margin-top: 10vh;
   }
-  .title-box {
-    height: 150px;
+  /* .title-box {
+    height: 220px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -378,7 +550,7 @@ nav .nav-links {
   .title-box h1 {
     font-size: 12vw;
     height: min-content;
-  }
+  } */
 
   .about-grid-container {
     margin: auto;
@@ -389,18 +561,23 @@ nav .nav-links {
 
 @media all and (max-width: 1000px) {
   .about-grid-container .grid-item .grid-paragraph {
-    font-size: 1.4em;
+    font-size: 1.5em;
     line-height: 1.1;
+    margin-top: 0.5vmin;
   }
   .about-grid-container .grid-item .grid-subtitle {
-    font-size: 1.6em;
+    font-size: 2rem;
     line-height: 1;
   }
 }
 
 @media all and (max-width: 670px) {
   .intro-text {
-    font-size: 6vw;
+    font-size: 22px;
+  }
+
+  .about-grid-container {
+    row-gap: 30px;
   }
 
   .about-intro {
@@ -409,7 +586,7 @@ nav .nav-links {
   }
 
   .about-grid-container .grid-item .grid-subtitle {
-    font-size: 1.2em;
+    font-size: 4.3vmin;
     line-height: 1.1;
   }
   .about-grid-container .grid-item .desktop {
@@ -417,7 +594,7 @@ nav .nav-links {
   }
   .about-grid-container .grid-item .mobile {
     display: inline-block;
-    font-size: 1em;
+    font-size: 3.7vmin;
   }
 }
 
@@ -638,11 +815,6 @@ nav .nav-links {
   font-size: 15px;
 }
 
-.menu-grid-parent > * {
-  /* border-right: solid;
-  border-bottom: solid; */
-}
-
 .menu-item,
 .size {
   font-size: 32px;
@@ -746,6 +918,7 @@ nav .nav-links {
   background-color: #f2f1ef;
   width: 100%;
   padding-top: 10px;
+  position: relative;
 }
 
 .find-us .header-container {
@@ -794,6 +967,21 @@ nav .nav-links {
 .find-us-body {
   color: #1a120f;
   font-size: 22px;
+}
+
+.find-us-bean,
+.find-us-bean-2 {
+  position: absolute;
+  opacity: 0.06;
+  right: 10px;
+  top: 80px;
+}
+
+.find-us-bean-2 {
+  transform: rotateX(180deg);
+  left: 20px;
+  right: auto;
+  top: -80px;
 }
 
 @media all and (max-width: 1000px) {
@@ -889,6 +1077,14 @@ nav .nav-links {
 @media all and (max-width: 767px) {
   .info-bar {
     flex-direction: column;
+  }
+
+  .find-us-bean {
+    top: 70vh;
+  }
+
+  .find-us-bean-2 {
+    display: none;
   }
 
   .map-box {
