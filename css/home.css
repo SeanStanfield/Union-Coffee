@@ -440,7 +440,8 @@ nav .nav-links {
   margin-bottom: 8px;
 }
 
-.about-intro {
+.about-intro,
+.menu-intro {
   width: 80%;
   max-width: 800px;
   margin: auto;
@@ -451,6 +452,10 @@ nav .nav-links {
   margin-bottom: 50px;
 }
 
+/* .menu-intro {
+  color: white;
+} */
+
 .about-grid-container {
   position: relative;
   margin: auto;
@@ -459,18 +464,27 @@ nav .nav-links {
   min-width: 300px;
   max-width: 1300px;
   height: 75vw;
+  max-height: 1200px;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  grid-gap: 3vw 2.5vw;
+  grid-gap: 20px;
 }
 
 .grid-item {
   /* border: solid; */
   height: auto;
+  max-height: 300px;
   width: auto;
+  max-width: 550px;
+  /* min-width: max-content; */
   overflow: visible;
   z-index: 2;
   position: relative;
+}
+
+.grid-item.img-1 {
+  float: right;
+  /* margin-left: auto; */
 }
 
 .grid-item img {
@@ -478,7 +492,7 @@ nav .nav-links {
   margin: 0;
   height: 100%;
   width: 100%;
-  object-fit: contain;
+  object-fit: cover;
   position: absolute;
   top: 0;
   left: 0;
@@ -647,10 +661,8 @@ nav .nav-links {
 .menu {
   margin-top: -10px;
   min-height: max-content;
-  height: 100vh;
-  background: url(/assets/beansDesktop.jpg), #b4b3b1;
-  background-blend-mode: multiply;
-  background-size: cover;
+  height: auto;
+  background: #f6f6f6;
   z-index: -3;
   width: 100%;
   position: relative;
@@ -659,7 +671,7 @@ nav .nav-links {
 
 .menu .bar-left,
 .menu .bar-right {
-  background-color: #f6f6f6;
+  background-color: black;
 }
 
 .menu .bar-left {
@@ -669,55 +681,63 @@ nav .nav-links {
   margin-right: 2.5vw;
 }
 .menu .page-header {
-  color: #f6f6f6;
+  color: black;
 }
 
 .flex-menu-parent {
   width: 95%;
-  height: 85%;
+  max-width: 2000px;
+  height: max-content;
   margin: auto;
   padding-bottom: 40px;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-direction: column;
+  justify-content: space-around;
+  align-items: space-between;
+  flex-direction: row;
   flex-wrap: wrap;
   /* background-color: aqua; */
 }
 
-.coffee-container {
+.menu [class*="heading"] {
+  margin-bottom: 20px;
+}
+
+.coffee-container,
+.pastry-container {
   /* background-color: rgb(218, 85, 85); */
-  background-color: rgba(20, 17, 16, 0.514);
+  /* background-color: rgba(20, 17, 16, 0.514); */
 
   width: 40%;
   height: 65%;
-  border-left: 6px white solid;
+  /* border-left: 6px white solid;
   border-right: 6px white solid;
-  border-bottom: 6px white solid;
+  border-bottom: 6px white solid; */
   position: relative;
+}
+
+.coffee-container,
+.speciality-coffee-container {
+  margin-bottom: 175px;
 }
 
 .not-coffee-container {
-  /* background-color: orchid; */
-  background-color: rgba(20, 17, 16, 0.514);
-
   width: 40%;
   height: 30%;
-  border-left: 6px white solid;
-  border-right: 6px white solid;
-  border-bottom: 6px white solid;
+  /* border-left: 6px #222 solid;
+  border-right: 6px #222 solid;
+  border-bottom: 6px #222 solid; */
   position: relative;
 }
+.speciality-coffee-container {
+  /* background-color: orchid; */
+  /* background-color: rgba(20, 17, 16, 0.514); */
 
-.brunch-container {
-  background-color: rgba(20, 17, 16, 0.514);
-  width: 50%;
-  height: 100%;
-  border-left: 6px white solid;
-  border-right: 6px white solid;
-  border-bottom: 6px white solid;
+  width: 45%;
+  height: 30%;
+  border-left: 6px #222 solid;
+  border-right: 6px #222 solid;
+  border-bottom: 6px #222 solid;
   position: relative;
-  margin-left: auto;
 }
 
 .menu [class*="title-parent"] {
@@ -733,116 +753,119 @@ nav .nav-links {
 .menu [class*="title-left"],
 .menu [class*="title-right"] {
   height: 6px;
-  background-color: whitesmoke;
+  background-color: #222;
   flex: 1;
 }
 
 .menu [class*="heading"] {
-  color: whitesmoke;
+  color: #222;
   margin: auto 22px;
   position: relative;
-  transform: translateY(-4px);
-  font-size: 2em;
+  transform: translateY(-0.8vw);
+  font-size: 7vmin;
+  /* background-color: lightcoral; */
   font-weight: Medium;
-  /* height: 100%; */
-  /* background-color: red; */
+  font-family: Brat;
 }
 
-@media all and (max-width: 670px) {
+.menu .speciality-coffee-heading {
+  font-size: 6vmin;
+}
+
+@media all and (min-width: 2000px) {
   .menu [class*="heading"] {
-    font-size: 34px !important;
-  }
-
-  .menu .not-coffee-heading {
-    transform: translateY(-12px);
-  }
-
-  .brunch {
-    grid-template-columns: 70% 30% !important;
+    font-size: 100px;
   }
 }
 
-@media all and (max-width: 500px) {
-  .grid-subtitle {
-    font-size: 16px !important;
-    padding-bottom: 5px;
-  }
-
-  .brunch .menu-item .inner-text {
-    font-size: 16px !important;
-  }
-
-  .size {
-    font-size: 22px !important;
-  }
-}
-
-.coffee {
+.coffee,
+.pastry {
   width: 100%;
   height: 95%;
-  margin-top: 15px;
+  margin-top: 45px;
   /* background-color: lightblue; */
 
   display: grid;
-  grid-template-columns: 3fr 1fr 1fr;
+  grid-template-columns: 8fr 2fr 1fr;
   grid-template-rows: repeat(8, 1fr);
+}
+
+.pastry {
+  grid-template-columns: 8fr 1fr;
+}
+
+.pastry .size {
+  justify-content: flex-end;
 }
 
 .softs {
   width: 100%;
   height: 95%;
-  margin-top: 15px;
+  margin-top: 45px;
   /* background-color: lightblue; */
 
   display: grid;
-  grid-template-columns: 3fr 1fr 1fr;
+  grid-template-columns: 8fr 2fr 1fr;
   grid-template-rows: repeat(3, 1fr);
 }
-.brunch {
+
+.specials {
   width: 100%;
-  height: 96%;
-  margin-top: 15px;
+  height: 95%;
+  margin-top: 45px;
+  padding-bottom: 20px;
   /* background-color: lightblue; */
 
   display: grid;
-  grid-template-columns: 5fr 1fr;
-  grid-template-rows: repeat(5, 1fr);
+  grid-template-columns: 6fr 1fr;
+  grid-template-rows: repeat(4, 1fr);
 }
 
-.allergies {
-  margin-left: 20px;
-  color: rgb(194, 194, 194);
-  font-size: 15px;
+.special-desc {
+  font-size: 16px;
+  opacity: 0.7;
+  width: 100%;
+  display: block;
+  padding-bottom: 10px;
 }
 
 .menu-item,
 .size {
   font-size: 32px;
   height: 100%;
+  max-height: 80px;
   display: flex;
   align-items: center;
-  font-weight: Medium;
-  padding-left: 20px;
+  padding-left: 2px;
 }
 
-.brunch .menu-item {
-  font-size: 26px;
+.specials .menu-item {
+  padding-left: 30px;
+}
+
+.specials .menu-item {
+  display: block;
+  max-height: 120px;
+  max-width: 90%;
+  max-width: 500px;
 }
 
 .inner-text {
-  color: whitesmoke;
+  color: #222;
 }
 
 .sizes {
-  color: rgb(238, 237, 237);
+  color: #333;
   font-size: 24px;
   font-weight: lighter;
 }
 
 .size {
-  font-size: 2vw;
+  font-size: 28px;
   font-weight: Medium;
 }
+
+
 
 @media all and (max-width: 1100px) {
   .menu-item .inner-text,
@@ -892,7 +915,8 @@ nav .nav-links {
   }
   .coffee-container,
   .not-coffee-container,
-  .brunch-container {
+  .speciality-coffee-container,
+  .pastry-container {
     width: 100%;
     margin-bottom: 50px;
   }
