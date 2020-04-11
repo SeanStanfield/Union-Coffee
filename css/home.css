@@ -448,13 +448,14 @@ nav .nav-links {
   text-align: center;
   font-size: 1.4rem;
   font-weight: lighter;
-  margin-top: 3vh;
+  margin-top: 30px;
   margin-bottom: 50px;
 }
 
-/* .menu-intro {
-  color: white;
-} */
+.menu-intro {
+  margin-top: 0;
+  margin-bottom: 80px;
+}
 
 .about-grid-container {
   position: relative;
@@ -692,7 +693,7 @@ nav .nav-links {
   padding-bottom: 40px;
   display: flex;
   justify-content: space-around;
-  align-items: space-between;
+  align-items: space-around;
   flex-direction: row;
   flex-wrap: wrap;
   /* background-color: aqua; */
@@ -718,6 +719,19 @@ nav .nav-links {
 .coffee-container,
 .speciality-coffee-container {
   margin-bottom: 175px;
+}
+
+.brunch-container {
+  width: 100%;
+  position: relative;
+}
+
+.brunch .menu-item {
+  margin-bottom: 20px;
+}
+
+.brunch-container .special-desc {
+  font-size: 22px;
 }
 
 .not-coffee-container {
@@ -865,60 +879,113 @@ nav .nav-links {
   font-weight: Medium;
 }
 
+.brunch-container {
+  margin-top: 60px;
+}
 
+.brunch {
+  width: 100%;
+  padding-top: 65px;
+}
+
+.brunch .menu-item {
+  display: block;
+  width: 100%;
+  text-align: center;
+  height: 100%;
+  max-height: 200px;
+}
+
+@media all and (max-width: 1025px) {
+  .coffee-container,
+  .speciality-coffee-container {
+    width: 47%;
+  }
+
+  .menu-grid-parent .inner-text,
+  .menu-grid-parent .menu-item .inner-text {
+    font-size: 23px;
+    padding-bottom: 5px;
+  }
+
+  .speciality-coffee-container .special-desc {
+    font-size: 14px;
+  }
+
+  .coffee-container,
+  .speciality-coffee-container {
+    margin-bottom: 65px;
+  }
+}
 
 @media all and (max-width: 1100px) {
   .menu-item .inner-text,
   .size {
     font-size: 28px;
   }
-
-  .brunch .menu-item .inner-text {
-    font-size: 22px;
-  }
-  .brunch .size {
-    padding-right: 8px;
-  }
-
-  .sizes {
-    font-size: 26px;
-    padding-right: 8px;
-  }
 }
 
 @media all and (max-width: 800px) {
   .menu {
-    height: 200vh;
-    min-height: 260vh;
-  }
-
-  .brunch {
-    height: 90vh;
-  }
-
-  .menu-item,
-  .size {
-    font-size: 32px;
+    height: max-content;
   }
 
   .sizes {
     font-size: 24px;
   }
 
-  .page-header {
-    font-size: 8vw;
-    height: auto;
-  }
-
   .flex-menu-parent {
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
   }
   .coffee-container,
   .not-coffee-container,
   .speciality-coffee-container,
   .pastry-container {
-    width: 100%;
+    width: 80%;
+    min-width: 300px;
+    margin: auto;
     margin-bottom: 50px;
+  }
+
+  .menu [class*="heading"] {
+    font-size: 50px;
+  }
+}
+
+@media all and (max-width: 500px) {
+  .menu .menu-intro p {
+    font-size: 18px;
+  }
+
+  .menu [class*="heading"] {
+    font-size: 50px;
+  }
+
+  .menu .speciality-coffee-heading {
+    font-size: 45px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .menu .speciality-coffee-container .special-desc {
+    width: 90%;
+  }
+
+  .menu .sizes {
+    font-size: 17px;
+  }
+
+  .menu .menu-grid-parent .menu-item .inner-text,
+  .menu .menu-grid-parent .size .inner-text {
+    font-size: 20px;
+  }
+
+  .brunch .menu-item .inner-text {
+    font-size: 22px;
+  }
+
+  .brunch .menu-item .special-desc {
+    font-size: 16px;
   }
 }
 
