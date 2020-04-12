@@ -5,6 +5,11 @@
   scroll-behavior: smooth;
 }
 
+@font-face {
+  font-family: Brat;
+  src: url(/assets/Brat.ttf);
+}
+
 body {
   width: 100vw !important;
   overflow-x: hidden;
@@ -78,7 +83,7 @@ body {
   left: calc(100% - 80px);
   flex-direction: column;
   justify-content: space-between;
-  background-color: black;
+  /* background-color: black; */
 }
 
 .cross-parent [class*="line"] {
