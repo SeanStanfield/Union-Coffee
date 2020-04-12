@@ -389,17 +389,17 @@ nav .nav-links {
   height: 5px;
   background-color: rgb(22, 22, 22);
   flex: 0;
-  animation: grow 5s ease;
-  animation-delay: 5s;
-  animation-fill-mode: forwards;
 }
 
 .bar-right {
   height: 5px;
   background-color: rgb(22, 22, 22);
   flex: 0;
-  animation: grow 5s ease;
-  animation-delay: 5s;
+}
+
+.growing {
+  animation: grow 3s ease;
+  animation-delay: 0.5s;
   animation-fill-mode: forwards;
 }
 
@@ -638,7 +638,7 @@ nav .nav-links {
   position: absolute;
   opacity: 0.06;
   right: 10vw;
-  bottom: -5vh;
+  bottom: 0vh;
   z-index: 1;
 }
 
@@ -1072,7 +1072,7 @@ nav .nav-links {
   transform: rotateX(180deg);
   left: 20px;
   right: auto;
-  top: -80px;
+  top: 20px;
 }
 
 @media all and (max-width: 1000px) {

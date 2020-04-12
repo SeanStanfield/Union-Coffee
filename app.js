@@ -4,6 +4,7 @@ const sidebarLinks = document.querySelectorAll(".mobile-sidebar ul li a");
 const dimmer = document.querySelector(".dimmer");
 const cross = document.querySelector(".cross-parent");
 const sliderImages = document.querySelectorAll("[class*='slide']");
+const growthBars = document.querySelectorAll(".bar-left, .bar-right");
 
 function debounce(func, wait = 20, immediate = true) {
   var timeout;
@@ -24,7 +25,6 @@ function debounce(func, wait = 20, immediate = true) {
 function checkSlide() {
   sliderImages.forEach((sliderImage) => {
     // half way through the image
-    let pageBottom = window.scrollY + window.innerHeight;
 
     const slideInAt =
       window.scrollY + window.innerHeight - sliderImage.height / 3;
@@ -35,11 +35,23 @@ function checkSlide() {
     let isHalfShown = window.innerHeight > imageCenter;
 
     if (isHalfShown) {
-      console.log("IM PEEKING");
+      // console.log("IM PEEKING");
       sliderImage.classList.add("active");
     }
 
-    console.log(imageCenter, "image center");
+    // console.log(imageCenter, "image center");
+  });
+
+  growthBars.forEach((bar) => {
+    let pageBottom = window.innerHeight;
+    barDistTop = bar.getBoundingClientRect().top;
+    console.log(pageBottom, barDistTop);
+
+    if (barDistTop < pageBottom) {
+      bar.classList.add("growing");
+
+      // console.log("is active");
+    }
   });
 }
 
