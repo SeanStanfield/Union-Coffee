@@ -13,6 +13,12 @@
 body {
   width: 100vw !important;
   overflow-x: hidden;
+  position: relative;
+}
+
+.site-wrap {
+  width: 100vw;
+  overflow-x: hidden;
 }
 
 .landing {
@@ -38,11 +44,11 @@ body {
 }
 
 .mobile-sidebar {
+  display: none;
   z-index: 11;
   position: absolute;
   top: 0;
-  right: -250px;
-  /* display: none; */
+  left: 100%;
   height: 100vh;
   width: 250px;
   background-color: rgb(14, 10, 7);
@@ -103,8 +109,9 @@ body {
 }
 
 .open {
+  display: block;
   position: fixed;
-  right: 0;
+  left: calc(100% - 250px);
   background-color: rgb(32, 24, 26);
 }
 
@@ -1007,7 +1014,8 @@ nav .nav-links {
 }
 
 .hyper-wrapper {
-  overflow-x: hidden;
+  width: 100%;
+  overflow: hidden !important;
 }
 
 .find-us {
