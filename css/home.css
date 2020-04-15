@@ -1203,7 +1203,7 @@ nav .nav-links {
   }
 
   .menu .speciality-coffee-heading {
-    font-size: 45px;
+    font-size: 38px;
     margin-left: 10px;
     margin-right: 10px;
   }
@@ -1298,6 +1298,8 @@ nav .nav-links {
 .info-bar > * {
   /* border: solid; */
   margin-bottom: 30px;
+  text-decoration: none;
+  color: black;
 }
 
 .opening .hours-list {
@@ -1510,5 +1512,8 @@ footer [class*="icon"] {
   .newsletter-input {
     width: 80vw;
     max-width: 270px;
+  }
+
+  .speciality-coffee-container .speciality-coffee-heading {
   }
 }
