@@ -557,7 +557,7 @@ nav .nav-links {
 .about {
   width: 100%;
   height: auto;
-  background-color: #f6f6f6;
+  background: rgba(247, 240, 226, 0.781);
   position: relative;
   overflow: hidden;
   padding-bottom: 8vh;
@@ -892,7 +892,7 @@ nav .nav-links {
   min-height: -moz-max-content;
   min-height: max-content;
   height: auto;
-  background: rgb(233, 222, 190);
+  background: rgba(247, 241, 226, 0.924);
   z-index: -3;
   width: 100%;
   position: relative;
@@ -940,14 +940,9 @@ nav .nav-links {
 
 .coffee-container,
 .pastry-container {
-  /* background-color: rgb(218, 85, 85); */
-  /* background-color: rgba(20, 17, 16, 0.514); */
-
   width: 40%;
   height: 65%;
-  /* border-left: 6px white solid;
-  border-right: 6px white solid;
-  border-bottom: 6px white solid; */
+
   position: relative;
 }
 
@@ -957,8 +952,14 @@ nav .nav-links {
 }
 
 .brunch-container {
-  width: 100%;
+  width: 100vw;
   position: relative;
+  background-color: rgb(228, 219, 203);
+  padding-top: 30px;
+}
+
+.brunch-container > * {
+  /* color: white !important; */
 }
 
 .brunch .menu-item {
@@ -1252,7 +1253,7 @@ nav .nav-links {
 }
 
 .find-us {
-  background-color: #f2f1ef;
+  background: rgba(247, 241, 226, 0.856);
   width: 100%;
   padding-top: 10px;
   position: relative;
@@ -1417,8 +1418,6 @@ footer [class*="icon"] {
 
 .input-container {
   position: relative;
-  width: -webkit-min-content;
-  width: -moz-min-content;
   width: 280px;
   /* background-color: greenyell`ow; */
 }
