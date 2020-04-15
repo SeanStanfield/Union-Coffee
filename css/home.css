@@ -954,7 +954,7 @@ nav .nav-links {
 .brunch-container {
   width: 100vw;
   position: relative;
-  background-color: rgb(228, 219, 203);
+  background-color: rgba(233, 213, 179, 0.384);
   padding-top: 30px;
 }
 
