@@ -954,12 +954,8 @@ nav .nav-links {
 .brunch-container {
   width: 100vw;
   position: relative;
-  background-color: rgba(233, 213, 179, 0.384);
+  background-color: rgb(238, 228, 211);
   padding-top: 30px;
-}
-
-.brunch-container > * {
-  /* color: white !important; */
 }
 
 .brunch .menu-item {
@@ -1359,7 +1355,7 @@ nav .nav-links {
 .footer {
   width: 100vw;
   height: 200px;
-  background-color: #e8e6e3;
+  background-color: #ebe3d7;
   /* background-color: lightpink; */
   display: -webkit-box;
   display: flex;
