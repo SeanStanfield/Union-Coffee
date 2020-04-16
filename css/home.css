@@ -1398,6 +1398,7 @@ nav .nav-links {
 
 .footer-list .list-item {
   font-size: 17px;
+  cursor: pointer;
 }
 
 .footer-list .footer-subheading {
@@ -1413,6 +1414,20 @@ footer [class*="icon"] {
   transform: translateY(4px);
   fill: rgba(7, 7, 7, 0.71);
   margin-right: 4px;
+  transition: 0.2s ease;
+}
+
+footer .facebook-icon:hover {
+  fill: rgb(63, 35, 155);
+}
+footer .insta-icon:hover {
+  fill: rgb(218, 29, 155);
+}
+footer .email-icon:hover {
+  fill: rgb(207, 58, 58);
+}
+footer .twitter-icon:hover {
+  fill: rgb(52, 150, 180);
 }
 
 .footer-right {
@@ -1457,6 +1472,12 @@ footer [class*="icon"] {
   border-bottom-right-radius: 4px;
   background-color: rgb(66, 53, 37);
   color: whitesmoke;
+  transition: all 0.3s ease;
+}
+
+.sign-up:hover {
+  color: #1a120f;
+  background-color: #6836225e;
 }
 
 @media all and (max-width: 767px) {
