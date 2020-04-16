@@ -31,12 +31,12 @@ body {
   background: url(/assets/heroBackground.jpg),
     linear-gradient(
       180deg,
-      rgba(7, 7, 7, 0.51) 2.33%,
-      rgba(55, 50, 47, 0.43) 83.85%
+      rgba(7, 7, 7, 0.418) 2.33%,
+      rgba(55, 50, 47, 0.342) 83.85%
     );
   background-blend-mode: multiply;
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: center right;
   background-size: cover;
   font-family: Oswald, sans-serif;
 }
